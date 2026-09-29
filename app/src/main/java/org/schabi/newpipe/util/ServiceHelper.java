@@ -49,6 +49,8 @@ public final class ServiceHelper {
                 return R.drawable.ic_bilibili;
             case 6:
                 return R.drawable.place_holder_niconico;
+            case 7:
+                return R.drawable.ic_twitch;
             default:
                 return R.drawable.place_holder_circle;
         }

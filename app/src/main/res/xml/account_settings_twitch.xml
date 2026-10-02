@@ -2,21 +2,20 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/settings_category_twitch_account_title">
-    <Preference
-        android:key="@string/login_key"
-        android:summary="@string/login_warning"
-        android:title="@string/login_title"
-        app:singleLineTitle="false"
-        app:iconSpaceReserved="false" />
+    <EditTextPreference
+        android:key="@string/twitch_cookies_key"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Enter Twitch API token" />
     <SwitchPreference
         android:defaultValue="false"
-        android:key="twitch_setting_token_top_streams"
+        android:key="twitch_use_token_kiosk"
         android:title="Use token for top streams"
         app:icon="@drawable/baseline_search_24"
         app:summary="Not using a token limits the amount to 25 streams" />
     <SwitchPreference
         android:defaultValue="false"
-        android:key="twitch_setting_token_categories"
+        android:key="twitch_use_token_categories"
         android:title="Use token for categories"
         app:icon="@drawable/baseline_search_24"
         app:summary="Not using a token limits the amount to 25 streams" />

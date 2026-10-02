@@ -340,8 +340,8 @@ public final class ServiceHelper {
             final String tokens = sharedPreferences.getString(context.getString(
                     R.string.twitch_cookies_key), null);
             ServiceList.Twitch.setTokens(tokens);
-            ((TwitchService)ServiceList.Twitch).setShouldUseHelixForKiosk(true);
-            ((TwitchService)ServiceList.Twitch).setShouldUseHelixForCategories(true);
+            ((TwitchService)ServiceList.Twitch).setShouldUseHelixForKiosk(sharedPreferences.getBoolean(context.getString(R.string.twitch_use_token_kiosk), false));
+            ((TwitchService)ServiceList.Twitch).setShouldUseHelixForCategories(sharedPreferences.getBoolean(context.getString(R.string.twitch_use_token_categories), false));
         }
     }
 

@@ -1,6 +1,7 @@
 package org.schabi.newpipe.settings;
 
 import android.content.Intent;
+import android.os.Bundle;
 
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.views.TwitchLoginWebViewActivity;

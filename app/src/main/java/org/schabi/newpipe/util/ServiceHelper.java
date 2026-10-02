@@ -17,6 +17,7 @@ import org.schabi.newpipe.extractor.ServiceList;
 import org.schabi.newpipe.extractor.StreamingService;
 import org.schabi.newpipe.extractor.exceptions.ExtractionException;
 import org.schabi.newpipe.extractor.services.peertube.PeertubeInstance;
+import org.schabi.newpipe.extractor.services.twitch.TwitchService;
 import org.schabi.newpipe.extractor.sponsorblock.SponsorBlockApiSettings;
 import org.schabi.newpipe.extractor.InfoItemsCollector.FilterConfig;
 
@@ -333,6 +334,14 @@ public final class ServiceHelper {
 //                ServiceList.YouTube.setTokens(sharedPreferences.getString(context.getString(R.string.override_cookies_youtube_value_key), null));
 //            }
 //            CookieUtils.exportCookiesToNetscapeYouTube(context, ServiceList.YouTube.getTokens());
+        } else if(serviceId == ServiceList.Twitch.getServiceId()) {
+            final SharedPreferences sharedPreferences = PreferenceManager
+                    .getDefaultSharedPreferences(context);
+            final String tokens = sharedPreferences.getString(context.getString(
+                    R.string.twitch_cookies_key), null);
+            ServiceList.Twitch.setTokens(tokens);
+            ((TwitchService)ServiceList.Twitch).setShouldUseHelixForKiosk(true);
+            ((TwitchService)ServiceList.Twitch).setShouldUseHelixForCategories(true);
         }
     }
 
